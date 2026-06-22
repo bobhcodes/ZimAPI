@@ -13,7 +13,7 @@ public class LibraryController(IZimService service) : ControllerBase
 	{
 		ICollection<Book> books = [];
 
-		await foreach (var book in service.GetBooksAsync())
+		await foreach (var book in service.GetEntriesAsync())
 		{
 			books.Add((Book)book);
 		}

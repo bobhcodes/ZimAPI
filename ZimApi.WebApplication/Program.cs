@@ -14,7 +14,7 @@ builder.Services
 	.AddTransient<HttpMessageHandler>(_ => new HttpClientHandler { AllowAutoRedirect = false, })
 	.AddCachingHandler(c => c.Expiration = TimeSpan.FromHours(1))
 	.AddSingleton(new XmlSerializerFactory())
-	.AddHttpClient<IZimClient, ZimClient>(c => c.BaseAddress = new Uri("https://download.kiwix.org/"))
+	.AddHttpClient<IZimClient, ZimClient>(c => c.BaseAddress = new Uri("https://browse.library.kiwix.org/"))
 		.ConfigurePrimaryHttpMessageHandler<HttpMessageHandler>()
 		.AddHttpMessageHandler<CachingHandler>()
 		.Services
