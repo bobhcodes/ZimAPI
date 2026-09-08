@@ -3,6 +3,7 @@
   <Folder Name="/Solution Items/">
     <File Path="build.ps1" />
     <File Path="docker-compose.yml" />
+    <File Path="README.md" />
   </Folder>
   <Project Path="ZimApi.Tests/ZimApi.Tests.csproj" Id="a1bfbfa9-ade5-4983-8728-8a6fc7f574bf" />
 </Solution>
