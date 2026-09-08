@@ -14,7 +14,11 @@ builder.Services
 	.AddTransient<HttpMessageHandler>(_ => new HttpClientHandler { AllowAutoRedirect = false, })
 	.AddCachingHandler(c => c.Expiration = TimeSpan.FromHours(1))
 	.AddSingleton(new XmlSerializerFactory())
-	.AddHttpClient<IZimClient, ZimClient>(c => c.BaseAddress = new Uri("https://browse.library.kiwix.org/"))
+	.AddHttpClient<IZimClient, ZimClient>(c =>
+		{
+			c.BaseAddress = new Uri("https://browse.library.kiwix.org/", UriKind.Absolute);
+			c.DefaultRequestHeaders.Add("Cookie", "confirmed=yes; filters=lang=eng");
+		})
 		.ConfigurePrimaryHttpMessageHandler<HttpMessageHandler>()
 		.AddHttpMessageHandler<CachingHandler>()
 		.Services

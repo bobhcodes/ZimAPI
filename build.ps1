@@ -6,5 +6,5 @@ docker buildx build `
 	--tag 'eassbhhtgu/zimapi:latest' `
 	--tag 'eassbhhtgu/zimapi:1' `
 	--tag 'eassbhhtgu/zimapi:1.2' `
-	--tag 'eassbhhtgu/zimapi:1.2.0' `
+	--tag 'eassbhhtgu/zimapi:1.2.1' `
 	.\ZimApi.WebApplication\
